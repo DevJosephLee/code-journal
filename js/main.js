@@ -12,6 +12,7 @@ $photoUrl.addEventListener('input', function (event) {
 });
 
 $form.addEventListener('submit', function (event) {
+  event.preventDefault();
   var newEntry = {
     title: $title.value,
     photoUrl: $photoUrl.value,
@@ -19,5 +20,5 @@ $form.addEventListener('submit', function (event) {
     nextEntryId: data.nextEntryId
   };
   data.nextEntryId++;
-  return newEntry;
+  data.entries.unshift(newEntry);
 });
