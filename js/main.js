@@ -2,8 +2,15 @@
 /* exported data */
 
 var $photoUrl = document.querySelector('#url');
+// var $title = document.querySelector('#title');
+// var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
+var $form = document.querySelector('form');
 
 $photoUrl.addEventListener('input', function (event) {
   $img.setAttribute('src', $photoUrl.value);
+});
+
+$form.addEventListener('submit', function (event) {
+
 });
