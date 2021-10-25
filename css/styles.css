@@ -1,0 +1,56 @@
+body {
+  background-color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+}
+
+header,
+button {
+  background-color: #562a80;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  width: 50px;
+  border-radius: 3px;
+  border: none;
+  height: 25px;
+}
+
+label {
+  font-weight: bold;
+}
+
+/* input:active {
+  border: #562a80;
+} */
+
+.user-input {
+  width: 100%;
+  border: 1px solid #cfcfcf;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .column-half {
+    width: 50%;
+  }
+
+  .padding-left-0 {
+    padding-left: 0;
+  }
+
+  .padding-right-0 {
+    padding-right: 0;
+  }
+}

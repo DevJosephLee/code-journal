@@ -18,6 +18,34 @@
   width: 100%;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* .justify-space-between {
+  justify-content: space-around;
+} */
+
+.margin-top-1 {
+  margin-top: 1rem;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.margin-top {
+  margin-top: 0.3rem;
+}
+
+.padding-left-inherit {
+  padding-left: 10rem;
+}
+
+.padding-right-inherit {
+  padding-right: inherit;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
