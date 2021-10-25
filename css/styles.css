@@ -28,7 +28,7 @@ label {
   border: 1px solid #cfcfcf;
 }
 
-input[type="text"] {
+.input-type-text {
   padding: 0.5rem;
 }
 
@@ -40,13 +40,5 @@ input[type="text"] {
 @media only screen and (min-width: 768px) {
   .column-half {
     width: 50%;
-  }
-
-  .padding-left-0 {
-    padding-left: 0;
-  }
-
-  .padding-right-0 {
-    padding-right: 0;
   }
 }

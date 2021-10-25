@@ -20,8 +20,10 @@
 <body>
   <header class="header">
     <div class="container">
-      <div class="row">
-        <h3>Code Journal</h3>
+      <div class="column-full">
+        <div class="row">
+          <h3>Code Journal</h3>
+        </div>
       </div>
     </div>
   </header>
@@ -29,8 +31,10 @@
     <div data-view="entry-form">
       <form>
         <div class="container">
-          <div class="row">
-            <h1>New Entry</h1>
+          <div class="column-full">
+            <div class="row">
+              <h1>New Entry</h1>
+            </div>
           </div>
           <div class="row">
             <div class="column-half padding-left-0">
@@ -41,24 +45,30 @@
                 <label for="title">Title</label>
               </div>
               <div class="row margin-top-small">
-                <input type="text" id="title" name="title" class="user-input" required>
+                <input type="text" id="title" name="title" class="user-input input-type-text" required>
               </div>
               <div class="row margin-top-1">
                 <label for="url">Photo URL</label>
               </div>
               <div class="row margin-top-small">
-                <input type="text" id="url" name="url" class="user-input" required>
+                <input type="text" id="url" name="url" class="user-input input-type-text" required>
               </div>
             </div>
           </div>
-          <div class="row margin-top-1">
-            <label for="notes">Notes</label>
+          <div class="column-full">
+            <div class="row margin-top-1">
+              <label for="notes">Notes</label>
+            </div>
           </div>
-          <div class="row margin-top-small">
-            <textarea id="notes" name="notes" class="user-input" required></textarea>
+          <div class="column-full">
+            <div class="row margin-top-small">
+              <textarea id="notes" name="notes" class="user-input" required></textarea>
+            </div>
           </div>
-          <div class="row justify-end margin-top-1 margin-bottom-1">
-            <button>Save</button>
+          <div class="column-full">
+            <div class="row justify-end margin-top-1 margin-bottom-1">
+              <button>Save</button>
+            </div>
           </div>
         </div>
       </form>
