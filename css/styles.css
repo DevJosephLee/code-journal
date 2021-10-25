@@ -1,0 +1,44 @@
+header,
+button {
+  background-color: #562a80;
+  color: white;
+}
+
+img {
+  width: 100%;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  width: 50px;
+  border-radius: 3px;
+  border: none;
+  height: 25px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.user-input {
+  width: 100%;
+  border: 1px solid #cfcfcf;
+}
+
+.input-type-text {
+  padding: 0.5rem;
+}
+
+.user-input:focus {
+  outline: none;
+  border-color: #562a80;
+}
+
+@media only screen and (min-width: 768px) {
+  .column-half {
+    width: 50%;
+  }
+}
