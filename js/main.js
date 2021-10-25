@@ -17,7 +17,7 @@ $form.addEventListener('submit', function (event) {
     title: $title.value,
     photoUrl: $photoUrl.value,
     notes: $notes.value,
-    nextEntryId: data.nextEntryId
+    entryId: data.nextEntryId
   };
   data.nextEntryId++;
   data.entries.unshift(newEntry);
