@@ -2,8 +2,8 @@
 /* exported data */
 
 var $photoUrl = document.querySelector('#url');
-// var $title = document.querySelector('#title');
-// var $notes = document.querySelector('#notes');
+var $title = document.querySelector('#title');
+var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 
@@ -12,5 +12,10 @@ $photoUrl.addEventListener('input', function (event) {
 });
 
 $form.addEventListener('submit', function (event) {
-
+  var newEntry = {
+    title: $title.value,
+    photoUrl: $photoUrl.value,
+    notes: $notes.value
+  };
+  return newEntry;
 });
