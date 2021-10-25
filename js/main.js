@@ -7,11 +7,11 @@ var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 
-$photoUrl.addEventListener('input', function (event) {
+$photoUrl.addEventListener('input', function setImgUrl(event) {
   $img.setAttribute('src', $photoUrl.value);
 });
 
-$form.addEventListener('submit', function (event) {
+$form.addEventListener('submit', function clickSubmit(event) {
   event.preventDefault();
   var newEntry = {
     title: $title.value,
