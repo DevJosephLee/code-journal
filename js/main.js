@@ -115,3 +115,7 @@ function newButtonClick(event) {
 
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
+
+$entryList.addEventListener('click', function () {
+
+});
