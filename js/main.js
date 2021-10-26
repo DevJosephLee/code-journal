@@ -7,7 +7,7 @@ var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 var $entryList = document.querySelector('.entry-list');
 var $viewNodeList = document.querySelectorAll('.view');
-var $noEntriesMessage = document.querySelector('p');
+var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $newButton = document.querySelector('.new-button');
 
