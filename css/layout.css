@@ -34,6 +34,15 @@
   margin-top: 0.3rem;
 }
 
+.margin-top-bottom-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;

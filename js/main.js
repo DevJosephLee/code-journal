@@ -7,6 +7,7 @@ var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 var $ul = document.querySelector('ul');
+// var $entriesButton = document.querySelector('.entries-button');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   $img.setAttribute('src', $photoUrl.value);
@@ -56,8 +57,12 @@ function renderEntry(entry) {
   return $root;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function appendEntry() {
   for (var i = 0; i < data.entries.length; i++) {
     $ul.appendChild(renderEntry(data.entries[i]));
   }
 });
+
+// $entriesButton.addEventListener('click', function (event) {
+//   console.log('success');
+// });
