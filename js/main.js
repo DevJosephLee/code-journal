@@ -6,6 +6,7 @@ var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
+var $ul = document.querySelector('ul');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   $img.setAttribute('src', $photoUrl.value);
@@ -37,7 +38,7 @@ function renderEntry(entry) {
   $row.appendChild($columnHalfImg);
 
   var $img = document.createElement('img');
-  $img.setAttribute('src', data.entries.photoUrl);
+  $img.setAttribute('src', entry.photoUrl);
   $columnHalfImg.appendChild($img);
 
   var $columnHalfText = document.createElement('div');
@@ -45,26 +46,18 @@ function renderEntry(entry) {
   $row.appendChild($columnHalfText);
 
   var $h3 = document.createElement('h3');
-  $h3.textContent = data.entries.title;
+  $h3.textContent = entry.title;
   $columnHalfText.appendChild($h3);
 
   var $p = document.createElement('p');
-  $p.textContent = data.entries.notes;
+  $p.textContent = entry.notes;
   $columnHalfText.appendChild($p);
 
   return $root;
 }
 
-renderEntry();
-
-//  < div class="row" >
-//               <div class="column-half">
-//                 <img src="images/placeholder-image-square.jpg" alt="placeholder">
-//               </div>
-//               <div class="column-half">
-//                 <h3>Ada Lovelace</h3>
-//                 <p>
-//                   blah blah blah
-//                 </p>
-//               </div>
-//             </div >
+document.addEventListener('DOMContentLoaded', function () {
+  for (var i = 0; i < data.entries.length; i++) {
+    $ul.appendChild(renderEntry(data.entries[i]));
+  }
+});
