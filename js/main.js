@@ -60,13 +60,25 @@ function renderEntry(entry) {
   $columnHalfText.setAttribute('class', 'column-half');
   $row.appendChild($columnHalfText);
 
+  var $nameIconRow = document.createElement('div');
+  $nameIconRow.setAttribute('class', 'row justify-space-between align-items-center');
+  $columnHalfText.appendChild($nameIconRow);
+
   var $h3 = document.createElement('h3');
   $h3.textContent = entry.title;
-  $columnHalfText.appendChild($h3);
+  $nameIconRow.appendChild($h3);
+
+  var $icon = document.createElement('i');
+  $icon.setAttribute('class', 'fas fa-pen');
+  $nameIconRow.appendChild($icon);
+
+  var $pRow = document.createElement('div');
+  $pRow.setAttribute('class', 'row');
+  $columnHalfText.appendChild($pRow);
 
   var $p = document.createElement('p');
   $p.textContent = entry.notes;
-  $columnHalfText.appendChild($p);
+  $pRow.appendChild($p);
 
   return $root;
 }

@@ -22,6 +22,7 @@ button {
 }
 
 a,
+i,
 button:hover {
   cursor: pointer;
 }
@@ -42,6 +43,11 @@ h3 {
 a {
   color: white;
   text-decoration: none;
+}
+
+i {
+  color: #562a80;
+  font-size: 1.5rem;
 }
 
 .user-input {
