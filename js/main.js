@@ -8,6 +8,8 @@ var $form = document.querySelector('form');
 var $entryList = document.querySelector('.entry-list');
 var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('p');
+var $entryFormPage = document.querySelector('div[data-view="entry-form"');
+var $entriesPage = document.querySelector('div[data-view="entries"');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   $img.setAttribute('src', $photoUrl.value);
@@ -26,6 +28,9 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $form.reset();
   $entryList.prepend(renderEntry(newEntry));
+
+  $entryFormPage.className = 'view hidden';
+  $entriesPage.className = 'view';
 
   if (data.entries.length > 0) {
     $noEntriesMessage.className = 'hidden';
