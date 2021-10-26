@@ -22,12 +22,12 @@
     <div class="container">
       <div class="row">
         <h3>Code Journal</h3>
-        <button class="margin-top-bottom-auto margin-left-10 entries-button">Entries</button>
+        <a class="margin-top-bottom-auto margin-left-10 entries-button" data-view="entries">Entries</a>
       </div>
     </div>
   </header>
   <main>
-    <div data-view="entry-form">
+    <div data-view="entry-form" class="view">
       <form>
         <div class="container">
           <div class="row">
@@ -72,13 +72,17 @@
         </div>
       </form>
     </div>
-    <div data-view="entries">
+    <div data-view="entries" class="view hidden">
       <div class="container">
-        <div class="row">
-          <div class="column-full">
-            <h1>Entries</h1>
-          </div>
+        <div class="row justify-space-between">
+          <h1>Entries</h1>
+          <a class="new-button margin-top-bottom-auto text-align-center" data-view="entry-form">NEW</a>
         </div>
+        <!-- <div class="row justify-center memo">
+          <p>
+            No entries have been recorded.
+          </p>
+        </div> -->
         <ul>
           <!-- <li>
             <div class="row">

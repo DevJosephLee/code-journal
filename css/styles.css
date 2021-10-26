@@ -19,6 +19,7 @@ button {
   height: 25px;
 }
 
+a,
 button:hover {
   cursor: pointer;
 }
@@ -50,8 +51,21 @@ h3 {
   border-color: #562a80;
 }
 
-@media only screen and (min-width: 768px) {
-  .column-half {
-    width: 50%;
-  }
+.new-button {
+  width: 50px;
+  height: 30px;
+  background-color: #562a80;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.view {
+  display: block;
 }

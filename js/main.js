@@ -1,13 +1,12 @@
 /* global data */
 /* exported data */
-
 var $photoUrl = document.querySelector('#url');
 var $title = document.querySelector('#title');
 var $notes = document.querySelector('#notes');
 var $img = document.querySelector('img');
 var $form = document.querySelector('form');
 var $ul = document.querySelector('ul');
-// var $entriesButton = document.querySelector('.entries-button');
+var $viewNodeList = document.querySelectorAll('.view');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   $img.setAttribute('src', $photoUrl.value);
@@ -29,6 +28,7 @@ $form.addEventListener('submit', function clickSubmit(event) {
 
 function renderEntry(entry) {
   var $root = document.createElement('li');
+  $root.setAttribute('class', 'margin-bottom-1');
 
   var $row = document.createElement('div');
   $row.setAttribute('class', 'row');
@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', function appendEntry() {
   }
 });
 
-// $entriesButton.addEventListener('click', function (event) {
-//   console.log('success');
-// });
+document.addEventListener('click', function switchViews(event) {
+  if (event.target.matches('a')) {
+    var $dataViewEventTarget = event.target.getAttribute('data-view');
+    for (var i = 0; i < $viewNodeList.length; i++) {
+      if ($dataViewEventTarget === $viewNodeList[i].getAttribute('data-view')) {
+        $viewNodeList[i].className = 'view';
+      } else {
+        $viewNodeList[i].className = 'view hidden';
+      }
+    }
+  }
+});

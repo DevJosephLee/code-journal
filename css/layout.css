@@ -22,6 +22,10 @@
   text-align: end;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .margin-top-1 {
   margin-top: 1rem;
 }
@@ -41,6 +45,14 @@
 
 .margin-left-10 {
   margin-left: 10px;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
