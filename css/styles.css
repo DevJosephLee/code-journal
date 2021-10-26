@@ -23,6 +23,11 @@ label {
   font-weight: bold;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .user-input {
   width: 100%;
   border: 1px solid #cfcfcf;
