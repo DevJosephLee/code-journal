@@ -59,6 +59,11 @@
   justify-content: center;
 }
 
+.justify-end {
+  display: flex;
+  justify-content: end;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 900px;
