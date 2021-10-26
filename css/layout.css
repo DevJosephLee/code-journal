@@ -77,4 +77,8 @@
   .column-half {
     width: 50%;
   }
+
+  .padding-left {
+    padding-left: 0.75rem;
+  }
 }
