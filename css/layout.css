@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.view {
+  display: block;
+}
+
 .container {
   max-width: 575px;
   margin: 0 auto;
@@ -22,6 +26,10 @@
   text-align: end;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .margin-top-1 {
   margin-top: 1rem;
 }
@@ -32,6 +40,28 @@
 
 .margin-top-small {
   margin-top: 0.3rem;
+}
+
+.margin-top-bottom-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: end;
 }
 
 @media screen and (min-width: 768px) {
@@ -46,5 +76,9 @@
 
   .column-half {
     width: 50%;
+  }
+
+  .padding-left {
+    padding-left: 0.75rem;
   }
 }
