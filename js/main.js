@@ -43,6 +43,7 @@ $form.addEventListener('submit', function clickSubmit(event) {
 function renderEntry(entry) {
   var $root = document.createElement('li');
   $root.setAttribute('class', 'margin-bottom-1');
+  $root.setAttribute('data-entry-id', entry.entryId);
 
   var $row = document.createElement('div');
   $row.setAttribute('class', 'row');
