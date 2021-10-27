@@ -33,10 +33,20 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $form.reset();
   $entryList.prepend(renderEntry(newEntry));
 
-  switchViews('entries');
-
   if (data.entries.length > 0) {
     $noEntriesMessage.className = 'view hidden';
+  }
+
+  switchViews('entries');
+
+  if (data.editing !== null) {
+    for (var i = 0; i < data.entries.length; i++) {
+      if (data.entries[i].entryId === data.editing.entryId) {
+        data.entries[i].title = newEntry.title;
+        data.entries[i].photoUrl = newEntry.photoUrl;
+        data.entries[i].notes = newEntry.notes;
+      }
+    }
   }
 });
 
@@ -119,7 +129,7 @@ $newButton.addEventListener('click', newButtonClick);
 $entryList.addEventListener('click', function clickEdit(event) {
   switchViews('entry-form');
   for (var i = 0; i < data.entries.length; i++) {
-    if (data.entries[i].entryId === parseInt(event.target.closest('li').getAttribute('data-entry-id'))) {
+    if (JSON.stringify(data.entries[i].entryId) === (event.target.closest('li').getAttribute('data-entry-id'))) {
       data.editing = data.entries[i];
     }
   }
