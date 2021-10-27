@@ -27,16 +27,10 @@ $form.addEventListener('submit', function clickSubmit(event) {
     notes: $notes.value,
     entryId: data.nextEntryId
   };
-  data.nextEntryId++;
-  data.entries.unshift(newEntry);
-  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $form.reset();
-  $entryList.prepend(renderEntry(newEntry));
-
   if (data.entries.length > 0) {
     $noEntriesMessage.className = 'view hidden';
   }
-
+  $form.reset();
   switchViews('entries');
 
   if (data.editing !== null) {
@@ -45,9 +39,18 @@ $form.addEventListener('submit', function clickSubmit(event) {
         data.entries[i].title = newEntry.title;
         data.entries[i].photoUrl = newEntry.photoUrl;
         data.entries[i].notes = newEntry.notes;
+        var editedEntry = renderEntry(data.entries[i]);
       }
     }
+    var replaceEntry = document.querySelector('li[data-entry-id' + '=' + '"' + data.editing.entryId + '"' + ']');
+    replaceEntry.replaceWith(editedEntry);
+  } else {
+    data.nextEntryId++;
+    data.entries.unshift(newEntry);
+    $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+    $entryList.prepend(renderEntry(newEntry));
   }
+  data.editing = null;
 });
 
 function renderEntry(entry) {
@@ -127,6 +130,9 @@ $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
 
 $entryList.addEventListener('click', function clickEdit(event) {
+  if (!event.target.matches('i')) {
+    return;
+  }
   switchViews('entry-form');
   for (var i = 0; i < data.entries.length; i++) {
     if (JSON.stringify(data.entries[i].entryId) === (event.target.closest('li').getAttribute('data-entry-id'))) {
@@ -138,3 +144,7 @@ $entryList.addEventListener('click', function clickEdit(event) {
   $img.setAttribute('src', $photoUrl.value);
   $notes.value = data.editing.notes;
 });
+
+// data.entries[i].matches('data-entry-id')
+// var replaceEntry = document.createElement('li');
+// replaceEntry.setAttribute('data-entry-id', data.editing.entryId);
