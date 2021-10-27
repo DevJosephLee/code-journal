@@ -10,8 +10,6 @@ var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $newButton = document.querySelector('.new-button');
-// var $entries = document.querySelector('li');
-// console.log($entries);
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   if ($photoUrl.value !== '') {
@@ -125,4 +123,8 @@ $entryList.addEventListener('click', function clickEdit(event) {
       data.editing = data.entries[i];
     }
   }
+  $title.value = data.editing.title;
+  $photoUrl.value = data.editing.photoUrl;
+  $img.setAttribute('src', $photoUrl.value);
+  $notes.value = data.editing.notes;
 });
