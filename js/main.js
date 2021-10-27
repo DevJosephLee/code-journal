@@ -11,13 +11,6 @@ var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $newButton = document.querySelector('.new-button');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
-// console.log($dataViewEntryForm);
-
-// if (data.edit !== null) {
-//   $pageTitle.textContent = 'Edit Entry';
-// } else {
-//   $pageTitle.textContent = 'New Entry';
-// }
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   if ($photoUrl.value !== '') {
