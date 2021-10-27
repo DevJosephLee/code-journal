@@ -50,6 +50,11 @@ i {
   font-size: 1.5rem;
 }
 
+p {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 .user-input {
   width: 100%;
   border: 1px solid #cfcfcf;

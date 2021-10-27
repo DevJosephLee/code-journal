@@ -144,7 +144,3 @@ $entryList.addEventListener('click', function clickEdit(event) {
   $img.setAttribute('src', $photoUrl.value);
   $notes.value = data.editing.notes;
 });
-
-// data.entries[i].matches('data-entry-id')
-// var replaceEntry = document.createElement('li');
-// replaceEntry.setAttribute('data-entry-id', data.editing.entryId);
