@@ -27,11 +27,6 @@ $form.addEventListener('submit', function clickSubmit(event) {
     notes: $notes.value,
     entryId: data.nextEntryId
   };
-  if (data.entries.length > 0) {
-    $noEntriesMessage.className = 'view hidden';
-  }
-  $form.reset();
-  switchViews('entries');
 
   if (data.editing !== null) {
     for (var i = 0; i < data.entries.length; i++) {
@@ -50,6 +45,11 @@ $form.addEventListener('submit', function clickSubmit(event) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
     $entryList.prepend(renderEntry(newEntry));
   }
+  if (data.entries.length > 0) {
+    $noEntriesMessage.className = 'view hidden';
+  }
+  $form.reset();
+  switchViews('entries');
   data.editing = null;
 });
 
