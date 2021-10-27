@@ -10,6 +10,8 @@ var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $newButton = document.querySelector('.new-button');
+// var $entries = document.querySelector('li');
+// console.log($entries);
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   if ($photoUrl.value !== '') {
@@ -116,6 +118,11 @@ function newButtonClick(event) {
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
 
-$entryList.addEventListener('click', function () {
+$entryList.addEventListener('click', function clickEdit(event) {
   switchViews('entry-form');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === parseInt(event.target.closest('li').getAttribute('data-entry-id'))) {
+      data.editing = data.entries[i];
+    }
+  }
 });
