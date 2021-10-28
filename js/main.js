@@ -13,7 +13,7 @@ var $deleteButton = document.querySelector('.delete-button');
 var $cancelButton = document.querySelector('.cancel-button');
 var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
-var $overlay = document.querySelector('div[class="overlay hidden"]');
+var $overlay = document.querySelector('.overlay.hidden');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
@@ -124,18 +124,16 @@ function switchViews(viewName) {
 }
 
 function entriesButtonClick(event) {
-  $title.value = '';
-  $photoUrl.value = '';
-  $notes.value = '';
+  $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
-  $deleteButton.className = 'hidden';
+  $deleteButton.className = 'visibility-none';
 }
 
 function newButtonClick(event) {
   switchViews('entry-form');
   $pageTitle.textContent = 'New Entry';
-  $deleteButton.classname = 'hidden';
+  $deleteButton.classname = 'visibility-none';
 }
 
 function deleteEntryButtonClick(event) {
@@ -159,11 +157,9 @@ function deleteConfirmButtonClick(event) {
     $noEntriesMessage.className = 'no-entries-message view';
   }
   data.editing = null;
-  $title.value = '';
-  $photoUrl.value = '';
-  $notes.value = '';
+  $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-  $deleteButton.className = 'hidden';
+  $deleteButton.className = 'visibility-none';
   switchViews('entries');
 }
 

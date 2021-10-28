@@ -23,7 +23,6 @@ button {
 
 a,
 i,
-input[type="submit"],
 button:hover {
   cursor: pointer;
 }
