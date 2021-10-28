@@ -151,6 +151,10 @@ function deleteConfirmButtonClick(event) {
     }
   }
   deleteEntry.remove();
+  if (data.entries.length === 0) {
+    $noEntriesMessage.className = 'no-entries-message view';
+  }
+  switchViews('entries');
 }
 
 $entriesButton.addEventListener('click', entriesButtonClick);
