@@ -10,7 +10,6 @@
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  position: relative;
 }
 
 .row {
@@ -25,6 +24,10 @@
 
 .text-align-center {
   text-align: center;
+}
+
+.text-align-end {
+  text-align: end;
 }
 
 .margin-top-1 {
@@ -82,8 +85,4 @@
   .padding-left {
     padding-left: 0.75rem;
   }
-
-  /* .margin-left-right-0 {
-    padding-left: 10rem;
-  } */
 }

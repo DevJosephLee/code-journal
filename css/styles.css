@@ -86,8 +86,7 @@ p {
   color: red;
   text-decoration: underline red;
   white-space: nowrap;
-  position: absolute;
-  left: 1.1rem;
+  padding: 0;
 }
 
 .save-button {

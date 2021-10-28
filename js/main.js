@@ -56,7 +56,6 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
   data.editing = null;
-
 });
 
 function renderEntry(entry) {
@@ -125,7 +124,12 @@ function switchViews(viewName) {
 }
 
 function entriesButtonClick(event) {
+  $title.value = '';
+  $photoUrl.value = '';
+  $notes.value = '';
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
+  $deleteButton.className = 'hidden';
 }
 
 function newButtonClick(event) {
@@ -134,7 +138,7 @@ function newButtonClick(event) {
   $deleteButton.classname = 'hidden';
 }
 
-function deleteButtonClick(event) {
+function deleteEntryButtonClick(event) {
   $overlay.className = 'overlay view';
 }
 
@@ -154,12 +158,18 @@ function deleteConfirmButtonClick(event) {
   if (data.entries.length === 0) {
     $noEntriesMessage.className = 'no-entries-message view';
   }
+  data.editing = null;
+  $title.value = '';
+  $photoUrl.value = '';
+  $notes.value = '';
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteButton.className = 'hidden';
   switchViews('entries');
 }
 
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
-$deleteButton.addEventListener('click', deleteButtonClick);
+$deleteButton.addEventListener('click', deleteEntryButtonClick);
 $cancelButton.addEventListener('click', deleteCancelButtonClick);
 $confirmButton.addEventListener('click', deleteConfirmButtonClick);
 
