@@ -10,9 +10,10 @@ var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $deleteButton = document.querySelector('.delete-button');
-// var $cancelButton = document.querySelector('.cancel-button');
-// var $confirmButton = document.querySelector('.confirm-button');
+var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
+var $overlay = document.querySelector('div[class="overlay hidden"]');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
@@ -133,13 +134,24 @@ function newButtonClick(event) {
   $deleteButton.classname = 'hidden';
 }
 
-// function deleteButtonClick(event) {
+function deleteButtonClick(event) {
+  switchViews('entry-form');
+  $overlay.className = 'overlay view';
+}
 
-// }
+function cancelButtonClick(event) {
+  $overlay.className = 'hidden';
+}
+
+function confirmButtonClick(event) {
+
+}
 
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
-// $deleteButton.addEventListener('click', deleteButtonClick);
+$deleteButton.addEventListener('click', deleteButtonClick);
+$cancelButton.addEventListener('click', cancelButtonClick);
+$confirmButton.addEventListener('click', confirmButtonClick);
 
 $entryList.addEventListener('click', function clickEdit(event) {
   if (!event.target.matches('i')) {
