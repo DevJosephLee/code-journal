@@ -10,6 +10,8 @@ var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $deleteButton = document.querySelector('.delete-button');
+// var $cancelButton = document.querySelector('.cancel-button');
+// var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
 
@@ -128,6 +130,7 @@ function entriesButtonClick(event) {
 function newButtonClick(event) {
   switchViews('entry-form');
   $pageTitle.textContent = 'New Entry';
+  $deleteButton.classname = 'hidden';
 }
 
 // function deleteButtonClick(event) {
