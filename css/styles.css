@@ -23,6 +23,7 @@ button {
 
 a,
 i,
+input[type="submit"],
 button:hover {
   cursor: pointer;
 }
@@ -86,7 +87,15 @@ p {
   text-decoration: underline red;
   white-space: nowrap;
   position: absolute;
-  left: 1rem;
+  left: 1.1rem;
+}
+
+.save-button {
+  background-color: #562a80;
+  color: white;
+  border: none;
+  width: 3rem;
+  padding: 0.4rem;
 }
 
 .cancel-button {

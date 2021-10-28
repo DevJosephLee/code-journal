@@ -32,7 +32,6 @@ $form.addEventListener('submit', function clickSubmit(event) {
     notes: $notes.value,
     entryId: data.nextEntryId
   };
-
   if (data.editing !== null) {
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === data.editing.entryId) {
@@ -57,6 +56,7 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
   data.editing = null;
+
 });
 
 function renderEntry(entry) {
@@ -135,23 +135,29 @@ function newButtonClick(event) {
 }
 
 function deleteButtonClick(event) {
-  switchViews('entry-form');
   $overlay.className = 'overlay view';
 }
 
-function cancelButtonClick(event) {
+function deleteCancelButtonClick(event) {
   $overlay.className = 'hidden';
 }
 
-function confirmButtonClick(event) {
-
+function deleteConfirmButtonClick(event) {
+  $overlay.className = 'hidden';
+  var deleteEntry = document.querySelector('li[data-entry-id' + '=' + '"' + data.editing.entryId + '"' + ']');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+  deleteEntry.remove();
 }
 
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
 $deleteButton.addEventListener('click', deleteButtonClick);
-$cancelButton.addEventListener('click', cancelButtonClick);
-$confirmButton.addEventListener('click', confirmButtonClick);
+$cancelButton.addEventListener('click', deleteCancelButtonClick);
+$confirmButton.addEventListener('click', deleteConfirmButtonClick);
 
 $entryList.addEventListener('click', function clickEdit(event) {
   if (!event.target.matches('i')) {
