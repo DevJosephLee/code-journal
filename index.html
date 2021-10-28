@@ -64,47 +64,26 @@
               <textarea id="notes" name="notes" class="user-input" required></textarea>
             </div>
           </div>
-          <div class="row">
-            <div class="column-full text-align-end margin-top-1 margin-bottom-1">
-              <button data-view="entries" class="save-button">Save</button>
-            </div>
+          <div class="row margin-top-1 margin-bottom-1 justify-end">
+            <button class="delete-button hidden">Delete Entry</button>
+            <button data-view="entries" class="save-button">Save</button>
           </div>
         </div>
       </form>
     </div>
     <div data-view="entries" class="view hidden">
       <div class="container">
-        <div class="row">
-          <div class="column-half">
-            <h1>Entries</h1>
-          </div>
-          <div class="column-half justify-end">
-            <a href="#" class="new-button margin-top-bottom-auto text-align-center new-button" data-view="entry-form">NEW</a>
-          </div>
+        <div class="row justify-space-between padding-left">
+          <h1>Entries</h1>
+          <a href="#" class="new-button margin-top-bottom-auto text-align-center new-button" data-view="entry-form">NEW</a>
         </div>
         <div class="row justify-center">
-          <p class="no-entries-message">
+          <span class="no-entries-message">
             No entries have been recorded.
-          </p>
+          </span>
         </div>
         <ul class="entry-list">
-          <!-- <li>
-            <div class="row">
-              <div class="column-half">
-                <img src="images/placeholder-image-square.jpg" alt="placeholder">
-              </div>
-              <div class="column-half">
-                <h3>Ada Lovelace</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quod doloremque rerum amet eos dolore
-                  repellat quo neque alias et? Quia explicabo inventore natus labore ipsum nobis! Voluptate, cum at.
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, nihil cum laborum recusandae deleniti
-                  dolor aliquam, voluptatibus nam doloremque vel, ad iure ipsum sequi voluptate quia tempore dolorem et?
-                  Culpa corrupti error distinctio maxime enim exercitationem placeat doloribus beatae modi.
-                </p>
-              </div>
-            </div>
-          </li> -->
+
         </ul>
       </div>
     </div>

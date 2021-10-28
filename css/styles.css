@@ -22,6 +22,7 @@ button {
 }
 
 a,
+i,
 button:hover {
   cursor: pointer;
 }
@@ -42,6 +43,16 @@ h3 {
 a {
   color: white;
   text-decoration: none;
+}
+
+i {
+  color: #562a80;
+  font-size: 1.5rem;
+}
+
+p {
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
 .user-input {
@@ -68,3 +79,17 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.delete-button {
+  background-color: inherit;
+  color: red;
+  text-decoration: underline red;
+  white-space: nowrap;
+  position: absolute;
+  left: 1rem;
+}
+
+/* .save-button {
+  display: flex;
+  justify-content: end;
+} */
