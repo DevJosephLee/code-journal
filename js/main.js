@@ -9,6 +9,7 @@ var $entryList = document.querySelector('.entry-list');
 var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
+var $deleteButton = document.querySelector('.delete-button');
 var $newButton = document.querySelector('.new-button');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
 
@@ -50,6 +51,7 @@ $form.addEventListener('submit', function clickSubmit(event) {
     $noEntriesMessage.className = 'view hidden';
   }
   $form.reset();
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
   data.editing = null;
 });
@@ -128,8 +130,13 @@ function newButtonClick(event) {
   $pageTitle.textContent = 'New Entry';
 }
 
+// function deleteButtonClick(event) {
+
+// }
+
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
+// $deleteButton.addEventListener('click', deleteButtonClick);
 
 $entryList.addEventListener('click', function clickEdit(event) {
   if (!event.target.matches('i')) {
@@ -146,4 +153,5 @@ $entryList.addEventListener('click', function clickEdit(event) {
   $img.setAttribute('src', $photoUrl.value);
   $notes.value = data.editing.notes;
   $pageTitle.textContent = 'Edit Entry';
+  $deleteButton.className = 'delete-button view';
 });

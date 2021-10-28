@@ -79,3 +79,17 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.delete-button {
+  background-color: inherit;
+  color: red;
+  text-decoration: underline red;
+  white-space: nowrap;
+  position: absolute;
+  left: 1rem;
+}
+
+/* .save-button {
+  display: flex;
+  justify-content: end;
+} */
