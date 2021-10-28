@@ -10,7 +10,6 @@
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  position: relative;
 }
 
 .row {
@@ -23,12 +22,16 @@
   width: 100%;
 }
 
-/* .text-align-end {
-  text-align: end;
-} */
+.visibility-none {
+  visibility: hidden;
+}
 
 .text-align-center {
   text-align: center;
+}
+
+.text-align-end {
+  text-align: end;
 }
 
 .margin-top-1 {
@@ -85,5 +88,9 @@
 
   .padding-left {
     padding-left: 0.75rem;
+  }
+
+  .padding-right {
+    padding-right: 0.75rem;
   }
 }

@@ -10,7 +10,10 @@ var $viewNodeList = document.querySelectorAll('.view');
 var $noEntriesMessage = document.querySelector('.no-entries-message');
 var $entriesButton = document.querySelector('.entries-button');
 var $deleteButton = document.querySelector('.delete-button');
+var $cancelButton = document.querySelector('.cancel-button');
+var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
+var $overlay = document.querySelector('.overlay.hidden');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
@@ -29,7 +32,6 @@ $form.addEventListener('submit', function clickSubmit(event) {
     notes: $notes.value,
     entryId: data.nextEntryId
   };
-
   if (data.editing !== null) {
     for (var i = 0; i < data.entries.length; i++) {
       if (data.entries[i].entryId === data.editing.entryId) {
@@ -122,21 +124,50 @@ function switchViews(viewName) {
 }
 
 function entriesButtonClick(event) {
+  $form.reset();
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
+  $deleteButton.className = 'visibility-none';
 }
 
 function newButtonClick(event) {
   switchViews('entry-form');
   $pageTitle.textContent = 'New Entry';
+  $deleteButton.classname = 'visibility-none';
 }
 
-// function deleteButtonClick(event) {
+function deleteEntryButtonClick(event) {
+  $overlay.className = 'overlay view';
+}
 
-// }
+function deleteCancelButtonClick(event) {
+  $overlay.className = 'hidden';
+}
+
+function deleteConfirmButtonClick(event) {
+  $overlay.className = 'hidden';
+  var deleteEntry = document.querySelector('li[data-entry-id' + '=' + '"' + data.editing.entryId + '"' + ']');
+  for (var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === data.editing.entryId) {
+      data.entries.splice(i, 1);
+    }
+  }
+  deleteEntry.remove();
+  if (data.entries.length === 0) {
+    $noEntriesMessage.className = 'no-entries-message view';
+  }
+  data.editing = null;
+  $form.reset();
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $deleteButton.className = 'visibility-none';
+  switchViews('entries');
+}
 
 $entriesButton.addEventListener('click', entriesButtonClick);
 $newButton.addEventListener('click', newButtonClick);
-// $deleteButton.addEventListener('click', deleteButtonClick);
+$deleteButton.addEventListener('click', deleteEntryButtonClick);
+$cancelButton.addEventListener('click', deleteCancelButtonClick);
+$confirmButton.addEventListener('click', deleteConfirmButtonClick);
 
 $entryList.addEventListener('click', function clickEdit(event) {
   if (!event.target.matches('i')) {
