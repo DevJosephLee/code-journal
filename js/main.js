@@ -15,7 +15,7 @@ var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
 var $overlay = document.querySelector('.overlay.hidden');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
-// var $searchBar = document.querySelector('.search-bar');
+var $searchBar = document.querySelector('.search-bar');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   if ($photoUrl.value !== '') {
@@ -25,19 +25,19 @@ $photoUrl.addEventListener('input', function setImgUrl(event) {
   }
 });
 
-// $searchBar.addEventListener('input', function searchEntry() {
-//   var $entriesNodeList = document.querySelectorAll('.entry-nodes');
-//   console.log($entriesNodeList);
-//   for (var i = 0; i < $entriesNodeList.length; i++) {
-//     var $entryName = $entriesNodeList[i].querySelector('h3');
-//     console.log($entryName);
-//     if ($entryName.textContent.toLowerCase().includes($searchBar.value.toLowerCaase())) {
-//       $entriesNodeList[i].className = 'hidden';
-//     } else {
-//       $entriesNodeList[i].className = 'margin-bottom-1 entry-nodes';
-//     }
-//   }
-// });
+$searchBar.addEventListener('input', function searchEntry() {
+  // var $entriesNodeList = document.querySelectorAll('.entry-nodes');
+  // console.log($entriesNodeList);
+  // for (var i = 0; i < $entriesNodeList.length; i++) {
+  //   var $entryName = $entriesNodeList[i].querySelector('h3');
+  //   console.log($entryName);
+  //   if ($entryName.textContent.toLowerCase().includes($searchBar.value.toLowerCaase())) {
+  //     $entriesNodeList[i].className = 'hidden';
+  //   } else {
+  //     $entriesNodeList[i].className = 'margin-bottom-1 entry-nodes';
+  //   }
+  // }
+});
 
 $form.addEventListener('submit', function clickSubmit(event) {
   event.preventDefault();
@@ -70,7 +70,7 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
-  // $searchBar.className = 'search-bar margin-left-10';
+  $searchBar.className = 'search-bar margin-left-10';
   data.editing = null;
 });
 
@@ -144,14 +144,14 @@ function entriesButtonClick(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
   $deleteButton.className = 'visibility-none';
-  // $searchBar.className = 'search-bar margin-left-10';
+  $searchBar.className = 'search-bar margin-left-10';
 }
 
 function newButtonClick(event) {
   switchViews('entry-form');
   $pageTitle.textContent = 'New Entry';
   $deleteButton.classname = 'visibility-none';
-  // $searchBar.className = 'hidden';
+  $searchBar.className = 'hidden';
 }
 
 function deleteEntryButtonClick(event) {
@@ -179,6 +179,7 @@ function deleteConfirmButtonClick(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $deleteButton.className = 'visibility-none';
   switchViews('entries');
+  $searchBar.className = 'search-bar margin-left-10';
 }
 
 $entryList.addEventListener('click', function clickEdit(event) {
@@ -197,7 +198,7 @@ $entryList.addEventListener('click', function clickEdit(event) {
   $notes.value = data.editing.notes;
   $pageTitle.textContent = 'Edit Entry';
   $deleteButton.className = 'delete-button view';
-  // $searchBar.className = 'hidden';
+  $searchBar.className = 'hidden';
 });
 
 $entriesButton.addEventListener('click', entriesButtonClick);
