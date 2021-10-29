@@ -27,7 +27,6 @@ $photoUrl.addEventListener('input', function setImgUrl(event) {
 
 $searchBar.addEventListener('input', function searchEntry() {
   // var $entriesNodeList = document.querySelectorAll('.entry-nodes');
-  // console.log($entriesNodeList);
   // for (var i = 0; i < $entriesNodeList.length; i++) {
   //   var $entryName = $entriesNodeList[i].querySelector('h3');
   //   console.log($entryName);
