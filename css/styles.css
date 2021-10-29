@@ -124,3 +124,10 @@ p {
   justify-content: center;
   align-items: center;
 }
+
+.search-bar {
+  outline: none;
+  border-color: #562a80;
+  width: 5.7rem;
+  height: 2rem;
+}

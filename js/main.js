@@ -15,6 +15,7 @@ var $confirmButton = document.querySelector('.confirm-button');
 var $newButton = document.querySelector('.new-button');
 var $overlay = document.querySelector('.overlay.hidden');
 var $pageTitle = document.querySelector('div[data-view="entry-form"] h1');
+// var $searchBar = document.querySelector('.search-bar');
 
 $photoUrl.addEventListener('input', function setImgUrl(event) {
   if ($photoUrl.value !== '') {
@@ -23,6 +24,20 @@ $photoUrl.addEventListener('input', function setImgUrl(event) {
     $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   }
 });
+
+// $searchBar.addEventListener('input', function searchEntry() {
+//   var $entriesNodeList = document.querySelectorAll('.entry-nodes');
+//   console.log($entriesNodeList);
+//   for (var i = 0; i < $entriesNodeList.length; i++) {
+//     var $entryName = $entriesNodeList[i].querySelector('h3');
+//     console.log($entryName);
+//     if ($entryName.textContent.toLowerCase().includes($searchBar.value.toLowerCaase())) {
+//       $entriesNodeList[i].className = 'hidden';
+//     } else {
+//       $entriesNodeList[i].className = 'margin-bottom-1 entry-nodes';
+//     }
+//   }
+// });
 
 $form.addEventListener('submit', function clickSubmit(event) {
   event.preventDefault();
@@ -55,12 +70,13 @@ $form.addEventListener('submit', function clickSubmit(event) {
   $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
+  // $searchBar.className = 'search-bar margin-left-10';
   data.editing = null;
 });
 
 function renderEntry(entry) {
   var $root = document.createElement('li');
-  $root.setAttribute('class', 'margin-bottom-1');
+  $root.setAttribute('class', 'margin-bottom-1 entry-nodes');
   $root.setAttribute('data-entry-id', entry.entryId);
 
   var $row = document.createElement('div');
@@ -128,12 +144,14 @@ function entriesButtonClick(event) {
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   switchViews('entries');
   $deleteButton.className = 'visibility-none';
+  // $searchBar.className = 'search-bar margin-left-10';
 }
 
 function newButtonClick(event) {
   switchViews('entry-form');
   $pageTitle.textContent = 'New Entry';
   $deleteButton.classname = 'visibility-none';
+  // $searchBar.className = 'hidden';
 }
 
 function deleteEntryButtonClick(event) {
@@ -163,12 +181,6 @@ function deleteConfirmButtonClick(event) {
   switchViews('entries');
 }
 
-$entriesButton.addEventListener('click', entriesButtonClick);
-$newButton.addEventListener('click', newButtonClick);
-$deleteButton.addEventListener('click', deleteEntryButtonClick);
-$cancelButton.addEventListener('click', deleteCancelButtonClick);
-$confirmButton.addEventListener('click', deleteConfirmButtonClick);
-
 $entryList.addEventListener('click', function clickEdit(event) {
   if (!event.target.matches('i')) {
     return;
@@ -185,4 +197,11 @@ $entryList.addEventListener('click', function clickEdit(event) {
   $notes.value = data.editing.notes;
   $pageTitle.textContent = 'Edit Entry';
   $deleteButton.className = 'delete-button view';
+  // $searchBar.className = 'hidden';
 });
+
+$entriesButton.addEventListener('click', entriesButtonClick);
+$newButton.addEventListener('click', newButtonClick);
+$deleteButton.addEventListener('click', deleteEntryButtonClick);
+$cancelButton.addEventListener('click', deleteCancelButtonClick);
+$confirmButton.addEventListener('click', deleteConfirmButtonClick);
